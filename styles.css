@@ -1,0 +1,183 @@
+/* Общие стили */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 60px;
+    min-height: 100vh;
+}
+
+/* Заголовок */
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #e3e3e5, #f5f5f7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+/* Навигация - macOS стиль */
+nav {
+    width: 100%;
+    height: 40px; /* Узкая панель */
+    background: rgba(255, 255, 255, 0.7); /* Прозрачный белый фон */
+    backdrop-filter: blur(15px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(15px); /* Для Safari */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Фиксированное меню */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Стили для списка меню */
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Стили для ссылок в меню */
+nav .menu a {
+    text-decoration: none;
+    color: #1d1d1f; /* Темно-серый */
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Эффект при наведении для меню с темным серым цветом */
+nav .menu a:hover {
+    background-color: rgba(105, 105, 105, 0.2); /* Более темное подсвечивание фона серым */
+    color: #222; /* Почти черный цвет текста */
+    border-radius: 5px; /* Закругление углов */
+    box-shadow: 0 0 10px rgba(105, 105, 105, 0.3); /* Легкая тень для эффекта */
+    transform: scale(1.05); /* Немного увеличиваем размер */
+    transition: all 0.2s ease-in-out; /* Плавная анимация */
+}
+
+/* Активный пункт меню */
+nav .menu a:active {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #005bb5;
+}
+
+/* Стили для секций */
+section {
+    width: 800px;
+    height: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Панель с кнопками (как на macOS) */
+.section-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-color: #d1d3d6; /* Серый фон для панели */
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Кнопки в панели */
+.section-bar .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #c4c4c6;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 7.5px; /* Добавляем отступ сверху для смещения точек вниз */
+}
+
+/* Кнопки разных цветов */
+.section-bar .button.close {
+    background-color: #ff5f57;
+}
+
+.section-bar .button.minimize {
+    background-color: #ffbd2e;
+}
+
+.section-bar .button.maximize {
+    background-color: #28c840;
+}
+
+/* Кнопки при наведении */
+.section-bar .button:hover {
+    opacity: 0.8;
+}
+
+/* Заголовки в заметках */
+section h2 {
+    font-size: 1.8em;
+    color: #333;
+    border-bottom: 2px solid #e0e0e2;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Подвал */
+footer {
+    width: 100%;
+    background-color: #f5f5f7;
+    padding: 20px;
+    text-align: center;
+    color: #6e6e73;
+    font-size: 1em;
+    bottom: 0;    /* Прижимаем к низу окна */
+    left: 0;      /* Устанавливаем слева */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Небольшая тень для красоты */
+}
+
+body {
+    padding-bottom: 60px; /* Оставляем место для фиксированного подвала */
+}
+
+footer p {
+    margin: 0;
+}
